@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/static/dist/css/bootstrap.css}">
+    <script th:src="@{/static/dist/js/jquery-1.12.4.js}"></script>
+    <script th:src="@{/static/dist/js/bootstrap.js}"></script>
+</head>
+<body th:each="seller:${seller}">
+<form th:action="@{/seller/updateseller} + '/' +${seller.getSellerId()}">
+    <div class="input-group input-group-sm" style="margin: 20px;">
+        卖家ID：<input type="text" class="form-control" aria-describedby="sizing-addon1" name="sellerId" th:value="${seller.getSellerId()}" disabled>
+    </div>
+    <div class="input-group input-group-sm" style="margin: 20px;"> 卖家名称：<input type="text" class="form-control" name="sellerName" aria-describedby="sizing-addon2" th:value="${seller.getSellerName()}" disabled>
+    </div>
+    <div class="input-group input-group-sm" style="margin: 20px;"> 卖家密码：<input type="text" class="form-control" name="sellerPwd" aria-describedby="sizing-addon3" th:value="${seller.getSellerPwd()}">
+    </div>
+    <button type="submit" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#myModal" style="margin: 20px;width:60px;height:30px;font-size:16px;">
+        保存
+    </button>
+    <button type="reset" class="btn btn-primary btn-sm " data-toggle="modal" data-target="#myModal" style="margin: 20px 30px;width:60px;height:30px;font-size:16px;">
+        重置
+    </button>
+</form>
+</body>
+</html>

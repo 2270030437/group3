@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" th:href="@{/static/dist/css/bootstrap.css}">
+  <script th:src="@{/static/dist/js/jquery-1.12.4.js}"></script>
+  <script th:src="@{/static/dist/js/bootstrap.js}"></script>
+</head>
+<body>
+<div class="app" style="padding-left: 50px;">
+  <h3 style="margin-top: 50px;"><strong>欢迎</strong></h3>
+  <table  class="table table-hover"style="width:722px;margin-top: 50px;">
+    <!--第一行-->
+    <tr>
+      <th class="text-center info">卖家编号</th>
+      <th class="text-center info">卖家名称</th>
+      <th class="text-center info">卖家学号</th>
+      <th class="text-center info">卖家宿舍楼编号</th>
+      <th class="text-center info">卖家宿舍号</th>
+      <th class="text-center info">卖家性别</th>
+      <th class="text-center info">卖家电话</th>
+    </tr>
+    <!--第二行-->
+    <tr th:each="seller:${seller}">
+      <td class="text-center" th:text="${seller.sellerId}"></td>
+      <td class="text-center" th:text="${seller.sellerName}"></td>
+      <td class="text-center" th:text="${seller.sellerNo}"></td>
+      <td class="text-center" th:text="${seller.sellerBuild}"></td>
+      <td class="text-center" th:text="${seller.sellerBuildNo}"></td>
+      <td class="text-center" th:text="${seller.sellerSex}"></td>
+      <td class="text-center" th:text="${seller.sellerPhone}"></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

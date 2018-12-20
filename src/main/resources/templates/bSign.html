@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>买家注册</title>
+    <link rel="stylesheet" th:href="@{/static/css/bSign.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/static/dist/css/bootstrap.css}">
+    <script th:src="@{/static/dist/js/jquery-1.12.4.js}"></script>
+    <script th:src="@{/static/dist/js/bootstrap.js}" th:inline="javascript"></script>
+</head>
+<script type="text/javascript">
+    function double() {
+        window.location.href = "http://localhost:8080/login/sign"
+    }
+</script>
+<body>
+<h1>注 册</h1>
+<div class="sellerPost">
+    <div class="seller">
+    <div class="buyer">
+        <a href="" ondblclick="double()" style="color:#fff;text-decoration: none;"><h2>买 家 注 册</h2></a>
+        <form th:action="@{/login/doSignS}" method="post" >
+            <input type="text" Name="buyerName" placeholder="用户名" required>
+            <input type="password" Name="buyerPwd" placeholder="密码" required>
+            <input type="text" Name="buyerNo" placeholder="学号" required>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style="margin:10px;background-color:#5FB878;color:#fff;">
+               隐私权政策
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
+                            <h4 class="modal-title" id="myModalLabel"> 提示条款<br/>
+                                互联网环境下，用户信息的安全与保密是景安关注的头等大事。《中华人民共和国网络安全法》实施后，景安更是将用户信息安全置于极其重要的地位，谨慎采取有效安全保护措施，加强用户信息的安全性与保密性。景安在此诚挚提醒用户（以下简称“您”）：
+                                在点击本网站的各个链接以获取相关信息或使用本网站的各项服务前，请仔细阅读并全面理解本《法律声明和隐私权政策》（以下简称“本声明及政策”），确认已充分知晓全部内容、理解并同意全部条款后，再予进行网站浏览、操作，以及使用本网站相关服务。一旦您点击本网站其他各个链接或使用本网站的任何一项服务，将视为您已知晓并同意本声明及政策的全部内容，自愿遵守本声明及政策的全部条款约定。
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="send-button">
+                <input type="submit" value="免费注册"/><a th:href="@{/login/bSign}">
+                <input type="reset" value="重置"/></a>
+            </div>
+        </form>
+        <div class="clear"></div>
+    </div>
+
+    <div class="clear"></div>
+
+</div>
+
+
+</body>
+</html>

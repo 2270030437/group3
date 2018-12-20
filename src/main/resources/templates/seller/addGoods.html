@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/static/dist/css/bootstrap.css}">
+<style type="text/css">
+
+.form-group pull-right{position: absolute;top:10px;left:350px;color:#31708f;}
+
+</style>
+
+</head>
+<body style="margin:70px 40px;position: relative;">
+<h1 style="font-weight: bold">发布求购商品：</h1>
+<form th:action="@{/goods/addGoods}" class="form-inline" style="margin:70px 50px;width: 550px;margin: 0 auto;font-size: 18px">
+    <div class="form-group" style="margin-top: 10%;" th:each="seller:${seller}">
+        <label for="sellerId">卖家编号</label>
+        <input  name="sellerId" style="width: 170px;height:30px;" type="text" class="form-control" id="sellerId" th:value="${seller.sellerId}" >
+    </div>
+    <div class="form-group pull-right" style="margin-top: 10%;">
+        <label for="goodKind">商品分类</label>
+        <select class="form-control" name="goodKind" id="goodKind" style="width:170px;">
+            <option>请选择商品类型</option>
+            <option th:each="goods : ${goods1}" th:text="${goods.goodKind}"></option>
+        </select></div>
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="goodName">商品名称</label>
+        <input  name="goodName" style="width: 170px;height:30px;"type="text" class="form-control" id="goodName" placeholder="商品名称">
+    </div>
+    <div class="form-group pull-right" style="margin-top: -30px;">
+        <label for="goodCount">商品数量</label>
+        <input  name="goodCount" style="width: 170px;height:30px;" type="text" class="form-control" id="goodCount" placeholder="商品数量">
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="goodUnit">商品单位</label>
+        <select class="form-control" name="goodUnit" id="goodUnit" style="width:170px;">
+            <option>请选择商品单位</option>
+            <option th:each="goods : ${goods2}" th:text="${goods.goodUnit}"></option>
+        </select> </div>
+    <div class="form-group pull-right" style="margin-top: 10px;">
+        <label for="goodPrice">商品单价</label>
+        <input  name="goodPrice" style="width: 170px;height:30px;"type="text" class="form-control" id="goodPrice" placeholder="商品单价">
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="goodInfo">商品信息</label>
+        <input  name="goodInfo" style="width: 170px;height:30px;"type="text" class="form-control" id="goodInfo" placeholder="商品信息">
+    </div>
+    <div class="form-group pull-right" style="margin-top: 10px;border: 0px;">
+        <label for="goodPhoto">商品照片</label>
+        <input  name="path" style="width: 170px" type="file" class="form-control" id="goodPhoto" disabled>
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="goodDate">商品生产日期</label>
+        <input  name="goodDate" style="width: 170px;height:30px;"type="text" class="form-control" id="goodDate" placeholder="商品发布时间">
+    </div>
+    <script th:src="@{/static/laydate/laydate.js}"></script> <!-- 改成你的路径 -->
+    <script>
+        //执行一个laydate实例
+        //时间选择器
+        laydate.render({
+            elem: '#goodDate'
+        });
+    </script>
+    <div class="form-group" style="margin:35px 60px;">
+        <button type="submit" id="shang" class="btn btn-default">
+            发布
+        </button>
+        <button type="botton" style="margin-left: 71px" class="btn btn-default">重置</button>
+    </div></form>
+</body>
+</html>

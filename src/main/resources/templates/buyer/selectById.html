@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="margin:80px 50px;">
+<form th:action="@{/buyer/updateGood}+'/'+${buygoods.goodId}" method="post">
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="goodId">商品编号</label>
+        <input  name="goodId" style="width: 170px;height:30px;padding-left:10px;"type="text" class="form-control" id="goodId" th:value="${buygoods.getGoodId()}" readonly>
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="goodName">商品名称</label>
+        <input  name="goodName" style="width: 170px;height:30px;padding-left:10px; "type="text" class="form-control" id="goodName" th:value="${buygoods.getGoodName()}">
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="goodKind">商品类型</label>
+        <input  name="goodKind" style="width: 170px;height:30px;padding-left:10px;"type="text" class="form-control" id="goodKind" th:value="${buygoods.getGoodKind()}">
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="goodCount">商品数量</label>
+        <input  name="goodCount" style="width: 170px;height:30px;padding-left:10px;"type="text" class="form-control" id="goodCount"th:value="${buygoods.getGoodCount()}">
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="goodInfo">商品描述</label>
+        <input  name="goodInfo" style="width: 170px;height:30px;padding-left:10px;"type="text" class="form-control" id="goodInfo" th:value="${buygoods.getGoodInfo()}">
+    </div>
+    <div class="form-group" style="margin:35px 60px;">
+        <button type="submit" class="btn btn-default" style="width: 130px;height:40px;margin-top: 10px;border-radius: 5px;">保存</button>
+        <a  th:href="@{/buyer/getGoods}" style="width: 130px;height:40px;margin-top: 10px;border-radius: 5px;color:#31708f;">退出修改</a>
+    </div></form>
+</body>
+</html>

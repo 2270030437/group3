@@ -1,0 +1,40 @@
+<!--前端页面基本完成，需要连接数据库，判断登录，之后跳转管理员控制页面双击事件无需修改-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>登陆</title>
+<link rel="stylesheet" th:href="@{/static/css/glogin.css}" type="text/css">
+</head>
+<!--编写js代码，对双击事件进行定义，-->
+<script type="text/javascript">
+    function double() {
+        window.location.href="http://localhost:8080/login/login"
+    }
+
+</script>
+<body>
+<h1>登 录</h1>
+<div class="sellerLogin">
+  <div class="seller">
+    <!--这里加入了一个双击事件，需要重新对双击事件定义--> 
+
+      <a href="" ondblclick="double()"><h2>欢迎回家</h2></a>
+
+    <form th:action="@{/gadmin/doLogin}" method="post">
+      <input type="text" Name="adminName" placeholder="管理员账号" required>
+      <input type="password" Name="adminPwd" placeholder="管理员密码" required>
+      <div class="send-button">
+        <input type="submit" value="登录" >
+        <input type="reset" value="重置">
+      </div>
+    </form>
+    <div class="clear"></div>
+  </div>
+
+  <div class="clear"> </div>
+</div>
+<div class="clear"></div>
+<!--</div>-->
+</body>
+</html>

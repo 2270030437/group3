@@ -1,0 +1,79 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>关于我们</title>
+</head>
+<style>
+body {
+	background:  url(../static/images/192569075.jpg) no-repeat;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	z-index: 1;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+#all {
+	width: 70%;
+	height: 590px;
+	margin: 0 auto;
+	padding: 40px;
+	background-color: rgba(15, 2, 10, 0.2);
+	border: 2px ridge rgba(238, 238, 238, 0.10);
+	border-radius: 5px;
+	-moz-box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.57);
+	-webkit-box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.57);
+	box-shadow: 0 -5px 10px 1px rgba(16, 16, 16, 0.57);
+	border-bottom: none;
+	border-bottom-left-radius: initial;
+	border-bottom-right-radius: initial;
+	
+}
+.middle {
+	width: 300px;
+	height: 200px;
+	display: inline;
+	padding-bottom:70px;
+	text-align: center;
+	margin: 0 auto;
+	color:#CCC;
+	
+}
+#us {
+	text-align: center;
+	color:#E4E4E4;
+}
+.why {
+	width: 900px;
+	height: 400px;
+	margin: 0 auto;
+	text-align: center;
+	color:#EEE;
+	font-weight:bolder;
+	line-height:30px;
+	
+}
+
+</style>
+<body>
+<div id="all">
+<embed th:src="@{/static/video/温亮亮 - 相信我们会创造奇迹 (自制版伴奏).mp3}" hidden="true" autostart="true" loop="true">
+  <div class="middle">
+    <h1>我们是谁?</h1>
+    <h1>Who are we?</h1>
+  </div>
+  <div id="us">我们是一群有着远大梦想的有志之士</div>
+  <div class="middle">
+    <h1>我们为什么做这个?</h1>
+    <h1>Why are we doing this?</h1>
+  </div>
+  <div class="why">(1)随着经济全球化的迅猛发展，在校只通过QQ、微信发布物品售卖广告早已远远满足不了同学之间的需求，也不能更好，更快的满足同学间的需求，必须有一种方便，快捷，符合学生生活习惯、符合人们生活习性的方法来解决这个问题。对于在校学生来说实现C2C进行网络物品交易已经迫在眉睫。二货校园二手交易系统是专门针对大学生的设计的一款实用的软件，他能有效解决大学生物品没用、新的太贵舍不得买，的问题。提高物品利用率，符合国家发展理念，减少浪费。二手平台近期一份用户调研显示，几乎人人都有闲置物品，而超过一半的用户倾向于让闲置物品放在一边不作处理。导致这种局面的原因，是因为大部分用户没有闲余时间及精力再去倒卖闲置物品，而小部分用户则是不知道倒卖二手商品的渠道。我们推出二手交易APP，迎合了很多高效学生变"闲"为"现"的想法，也响应了社会低碳生活的号召。我们将致力于帮助帮助买家直接和卖家面对面交易。通过直卖模式双赢局面。
+    <div class="why">(2)二货校园二手交易系统基于理念设计的组件化平台，各个子系统功能模块即插即用，是用B/S架构，方便高效操作，0成本投入，收效显著。 </div>
+  </div>
+</div>
+</body>
+</html>

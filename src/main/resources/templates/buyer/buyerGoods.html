@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/static/dist/css/bootstrap.css}">
+    <script th:src="@{/static/dist/js/jquery-1.12.4.js}"></script>
+    <script th:src="@{/static/dist/js/bootstrap.js}"></script>
+</head>
+<body>
+<div class="app" style="padding-left: 50px;">
+    <h4><strong>搜索商品名称：</strong></h4>
+    <form th:action="@{/buyer/seaName}" style="margin:20px 30px;">
+        <input type="search" name="goodName" placeholder="请输入商品名称" style="border-radius: 5px;width:300px;height:30px;"/>
+    </form>
+<table  class="table table-hover"style="width:722px">
+    <!--第一行-->
+    <tr>
+        <th class="text-center info">商品编号</th>
+        <th class="text-center info">商品名称</th>
+        <th class="text-center info">商品类型</th>
+        <th class="text-center info">商品数量</th>
+        <th class="text-center info">商品描述</th>
+        <th class="text-center info">商品发布时间</th>
+        <th class="text-center info">操作</th>
+    </tr>
+    <!--第二行-->
+    <tr th:each="buygoods:${list}">
+        <td class="text-center" th:text="${buygoods.goodId}"></td>
+        <td class="text-center" th:text="${buygoods.goodName}"></td>
+        <td class="text-center" th:text="${buygoods.goodKind}"></td>
+        <td class="text-center" th:text="${buygoods.goodCount}"></td>
+        <td class="text-center" th:text="${buygoods.goodInfo}"></td>
+        <td class="text-center" th:text="${buygoods.goodDate}"></td>
+        <td style="text-align: center">
+            <a th:href="@{/buyer/deleteGood}+'/'+${buygoods.goodId}">删除</a>
+            &nbsp; <a th:href="@{/buyer/selectById}+'/'+${buygoods.goodId}">编辑</a> </td>
+    </tr>
+</table>
+</div>
+
+</body>
+</html>

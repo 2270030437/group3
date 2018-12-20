@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/static/css/商品详情页.css}"/>
+
+</head>
+<body>
+<div id="all">
+    <div class="left">
+        <img th:src="@{/static/images/图片.jpg}" width="350" height="250"/>
+    </div>
+    <div class="right">
+        <ul th:each="goods:${goods}">
+            <li>商品编号:<span th:text="${goods.goodId}"></span></li>
+            <li>卖家编号:<span th:text="${goods.sellerId}"></span></li>
+            <li>商品名字:<span th:text="${goods.goodName}"></span></li>
+            <li>商品价格:<span th:text="${goods.goodPrice}"></span></li>
+            <li>商品单位:<span th:text="${goods.goodUnit}"></span></li>
+            <li>商品数量:<span th:text="${goods.goodCount}"></span></li>
+            <li>商品种类:<span th:text="${goods.goodKind}"></span></li>
+            <li>商品生产日期:<span th:text="${goods.goodDate}"></span></li>
+            <li>商品信息:<span th:text="${goods.goodInfo}"></span></li>
+        </ul>
+    </div>
+    <form th:action="@{/goods/doselectGoodsAll}">
+        <div class="bottom">
+            <input type="submit" value="确认" id="determine" style="height:40px; width:120px;"/>
+            <input type="button" value="取消" style="height:40px; width:100px;" onClick="cancel()"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>

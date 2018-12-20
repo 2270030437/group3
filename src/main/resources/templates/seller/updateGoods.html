@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/static/dist/css/bootstrap.css}">
+    <script th:src="@{/static/dist/js/jquery-1.12.4.js}"></script>
+    <script th:src="@{/static/dist/js/bootstrap.js}"></script>
+</head>
+<body>
+<div class="app" style="padding-left: 50px;">
+    <h4><strong>商品名称：</strong></h4>
+    <select class="form-control" name="cid" style="width:600px;">
+        <option>请输入商品名称</option>
+        <option th:each="list:${session.list2}"  th:text="${list.goodName}"></option>
+    </select>
+    <p><a id="goodBtn" class="btn btn-primary" href="#" role="button" style="margin-top: 20px">
+        <span class="glyphicon glyphicon-search">搜索</span></a></p>
+    <table  class="table table-hover"style="width:722px">
+        <!--第一行-->
+        <tr>
+            <th class="text-center">商品编号</th>
+            <th class="text-center">商品分类</th>
+            <th class="text-center">商品名称</th>
+            <th class="text-center">商品数量</th>
+            <th class="text-center">商品单位</th>
+            <th class="text-center">商品单价</th>
+            <th class="text-center">商品生产日期</th>
+            <th class="text-center">操作</th>
+        </tr>
+        <!--第二行-->
+        <tbody class="text-center" id="content" th:action="@{/goods/doselectGoodsAll}">
+        <tr th:each="goods : ${list}">
+            <td align="center" th:text="${goods.goodId}"></td>
+            <td align="center" th:text="${goods.goodKind}"></td>
+            <td align="center" th:text="${goods.goodName}"></td>
+            <td align="center" th:text="${goods.goodCount}"></td>
+            <td align="center" th:text="${goods.goodUnit}"></td>
+            <td align="center" th:text="${goods.goodPrice}"></td>
+            <td align="center" th:text="${goods.goodDate}"></td>
+            <td align="center"><a th:href="@{/goods/deleteGood}+'/'+${goods.goodId}">修改</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

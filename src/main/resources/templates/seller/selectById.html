@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/static/dist/css/bootstrap.css}">
+    <script th:src="@{/static/dist/js/jquery-1.12.4.js}"></script>
+    <script th:src="@{/static/dist/js/bootstrap.js}"></script>
+</head>
+<body>
+
+<form th:action="@{/goods/updateGood} + '/' +${goods.getGoodId()}" style="margin-left:20px;">
+    <div class="form-group" style="margin-top: 10px;">
+        <label for="goodId">商品编号</label>
+        <input  name="goodId" style="width: 170px;height:30px;"type="text" class="form-control" id="goodId" th:value="${goods.getGoodId()}" disabled>
+    </div>
+    <div class="form-group" style="margin-top: 10px;">
+        <label for="sellerId">卖家编号</label>
+        <input  name="sellerId" style="width: 170px;height:30px;"type="text" class="form-control" id="sellerId" th:value="${goods.getSellerId()}" disabled>
+    </div>
+    <div class="form-group" style="margin-top: 10px;">
+        <label for="goodKind">商品分类</label>
+        <input  name="goodKind" style="width: 170px;height:30px;"type="text" class="form-control" id="goodKind" th:value="${goods.getGoodKind()}">
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="goodName">商品名称</label>
+        <input  name="goodName" style="width: 170px;height:30px;"type="text" class="form-control" id="goodName" th:value="${goods.getGoodName()}" >
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="goodCount">商品数量</label>
+        <input  name="goodCount" style="width: 170px;height:    30px;"type="text" class="form-control" id="goodCount" th:value="${goods.getGoodCount()}" >
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="goodUnit">商品单位</label>
+        <input  name="goodUnit" style="width: 170px;height:30px;"type="text" class="form-control" id="goodUnit" th:value="${goods.getGoodUnit()}">
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="goodPrice">商品单价</label>
+        <input  name="goodPrice" style="width: 170px;height:30px;"type="text" class="form-control" id="goodPrice" th:value="${goods.getGoodPrice()}" >
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="goodInfo">商品信息</label>
+        <input  name="goodInfo" style="width: 170px;height:30px;"type="text" class="form-control" id="goodInfo" th:value="${goods.getGoodInfo()}">
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="goodDate">商品生产日期</label>
+        <input  name="goodDate" style="width: 170px;height:30px;"type="text" class="form-control" id="goodDate" th:value="${goods.getGoodDate()}" disabled>
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="goodPhoto">商品照片</label>
+        <input  name="goodPhoto" style="width: 170px;height:30px;"type="text" class="form-control" id="goodPhoto" th:value="${goods.getGoodPhoto()}" disabled>
+    </div>
+    <div class="form-group" style="margin:35px 60px;">
+        <button type="submit" class="btn btn-default" style="width: 130px;height:40px;margin-top: 10px;border-radius: 5px;">保存</button>
+        <a  th:href="@{/goods/getGoods}" style="width: 130px;height:40px;margin-top: 10px;border-radius: 5px;color:#31708f;">退出修改</a>
+    </div>
+</form>
+</body>
+</html>

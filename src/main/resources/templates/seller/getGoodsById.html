@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/static/dist/css/bootstrap.css}">
+    <script th:src="@{/static/dist/js/jquery-1.12.4.js}"></script>
+    <script th:src="@{/static/dist/js/bootstrap.js}"></script>
+</head>
+<body>
+<div class="app" style="padding-left: 50px;">
+    <h4 style="margin-top: 50px"><strong>商品信息：</strong></h4>
+    <table  class="table table-hover"style="width:722px;margin-top: 50px">
+    <table  class="table table-hover"style="width:722px">
+        <!--第一行-->
+        <tr>
+            <th class="text-center">商品编号</th>
+            <th class="text-center">商品分类</th>
+            <th class="text-center">商品名称</th>
+            <th class="text-center">商品数量</th>
+            <th class="text-center">商品单位</th>
+            <th class="text-center">商品单价</th>
+            <th class="text-center">操作</th>
+        </tr>
+        <!--第二行-->
+        <tr th:each="goods : ${goods}">
+            <td align="center" th:text="${goods.goodId}"></td>
+            <td align="center" th:text="${goods.goodKind}"></td>
+            <td align="center" th:text="${goods.goodName}"></td>
+            <td align="center" th:text="${goods.goodCount}"></td>
+            <td align="center" th:text="${goods.goodUnit}"></td>
+            <td align="center" th:text="${goods.goodPrice}"></td>
+            <td align="center"><a id="dele" th:href="@{/goods/doselectGoodsAll}">返回</a></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

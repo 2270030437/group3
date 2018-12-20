@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/static/dist/css/bootstrap.css}">
+    <script th:src="@{/static/dist/js/jquery-1.12.4.js}"></script>
+    <script th:src="@{/static/dist/js/bootstrap.js}"></script>
+</head>
+<body>
+<div class="app" style="padding-left: 50px;">
+    <h4 style="margin-top: 50px"><strong>商品信息：</strong></h4>
+    <table  class="table table-hover"style="width:722px;margin-top: 50px">
+        <!--第一行-->
+        <tr>
+            <th class="text-center info">商品编号</th>
+            <th class="text-center info">商品名称</th>
+            <th class="text-center info">商品类型</th>
+            <th class="text-center info">商品数量</th>
+            <th class="text-center info">商品描述</th>
+            <th class="text-center info">商品发布日期</th>
+            <th class="text-center info">操作</th>
+        </tr>
+        <!--第二行-->
+        <tr th:each="buygoods:${buygoods}">
+            <td class="text-center" th:text="${buygoods.goodId}"></td>
+            <td class="text-center" th:text="${buygoods.goodName}"></td>
+            <td class="text-center" th:text="${buygoods.goodKind}"></td>
+            <td class="text-center" th:text="${buygoods.goodCount}"></td>
+            <td class="text-center" th:text="${buygoods.goodInfo}"></td>
+            <td class="text-center" th:text="${buygoods.goodDate}" disabled></td>
+            <td style="text-align: center">
+                <a th:href="@{/buyer/getGoods}">返回</a></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

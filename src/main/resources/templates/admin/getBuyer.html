@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/static/dist/css/bootstrap.css}">
+    <script th:src="@{/static/dist/js/jquery-1.12.4.js}"></script>
+    <script th:src="@{/static/dist/js/bootstrap.js}"></script>
+</head>
+<body>
+<div class="app" style="padding-left: 50px;">
+    <h4><strong>买家名称：</strong></h4>
+    <select class="form-control" name="cid" style="width:600px;">
+        <option>请选择买家编号</option>
+        <option  th:each="buyer:${buyer}" th:text="${buyer.buyerId}"></option>
+    </select>
+    <p><a id="goodBtn" class="btn btn-primary" href="#" role="button" style="margin-top: 20px">
+        <span class="glyphicon glyphicon-search">搜索</span></a></p>
+    <table  class="table table-hover"style="width:722px">
+        <!--第一行-->
+        <tr>
+            <th class="text-center info">买家编号</th>
+            <th class="text-center info">买家名称</th>
+            <th class="text-center info">买家学号</th>
+            <th class="text-center info">操作</th>
+        </tr>
+        <!--第二行-->
+        <tr th:each="buyer:${buyer}">
+            <td class="text-center" th:text="${buyer.buyerId}"></td>
+            <td class="text-center" th:text="${buyer.buyerName}"></td>
+            <td class="text-center" th:text="${buyer.buyerNo}"></td>
+            <td class="text-center" ><a  th:href="@{/gadmin/deleteBuyer}+'/'+${buyer.buyerId}">删除</a></td>
+        </tr>
+        <script>
+            function del() {
+                var r = window.confirm("是否删除?");
+                var buyerId = document.getElementById("buyerId").value;
+                if (r==true) {
+                    $.ajax({
+                        data: "buyerId",
+                        url: "http://localhost:8080/gadmin/deleteBuyer/"+data,
+                        success: function(){
+                            alert("删除成功！");
+                        }});
+                }
+                else {
+                    return false;
+                }
+                return r;
+            }
+
+        </script>
+    </table>
+</div>
+</body>
+</html>

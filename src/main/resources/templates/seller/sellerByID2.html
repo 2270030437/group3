@@ -1,0 +1,47 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>卖家信息</title>
+   <style type="text/css">
+      *{margin:0 auto; padding:0px;}
+	  #all{width:800px; height:800px; margin-top:50px; margin-left:100px;}
+	  #all table{background-color:#FCFCFC;}
+	  h2{text-align:center; padding-bottom:40px;}
+	  
+   </style>
+</head>
+  
+<body>
+<div id="all">
+  <h2>欢迎</h2>
+  <table width="433" height="257" border="1">
+  <tr>
+    <td width="154" align="center" valign="middle">卖家编号</td>
+    <td align="center" valign="middle" width="154" th:text="${seller.sellerId}"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">卖家名字</td>
+    <td align="center" valign="middle" th:text="${seller.sellerName}"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">卖家手机号</td>
+    <td align="center" valign="middle" th:text="${seller.sellerPhone}"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">卖家宿舍楼号</td>
+    <td align="center" valign="middle" th:text="${seller.sellerBuild}"></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle">卖家宿舍号</td>
+    <td align="center" valign="middle" th:text="${seller.sellerBuildNo}"></td>
+  </tr>
+  <tr>
+    <td height="43" align="center" valign="middle">卖家性别</td>
+    <td align="center" valign="middle" th:text="${seller.sellerSex}"></td>
+  </tr>
+</table>
+ 
+</div>
+</body>
+</html>
