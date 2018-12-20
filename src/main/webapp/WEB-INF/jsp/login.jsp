@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Title</title>
@@ -68,7 +67,7 @@
     </div>
     <div class="buyer">
         <a href="" ondblclick="double()"><h2>买 家 登 录</h2></a>
-        <form action="${pageContext.request.contextPath}/login/doLoginB" method="post" style="position: relative;">
+        <form action="/login/doLoginB" method="post" style="position: relative;">
             <input type="text" name="buyerName" placeholder="用户名" required>
             <input type="password" name="buyerPwd" id="pwd1" placeholder="密码" required>
             <sapn><input class="btn btn-default" type="button" value="see" onclick="change1();" style="border-radius:2px;position: absolute;top:60px;right:20px;opacity: 0.8;"></sapn>
